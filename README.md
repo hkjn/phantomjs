@@ -2,7 +2,11 @@
 
 PhantomJS ([phantomjs.org](http://phantomjs.org)) is a headless WebKit scriptable with JavaScript.  The latest [stable release](http://phantomjs.org/release-2.1.html) is version 2.1.
 
-**Important**: PhantomJS development is suspended until further notice (see [#15344](https://github.com/ariya/phantomjs/issues/15344) for more details).
+- this is a fork of phantomjs, since upstream [suspended development](https://github.com/ariya/phantomjs/issues/15344)
+- we added a [`Dockerfile`](Dockerfile) to document the dependencies, tested on macOS Monterey 12.0.1 with Apple M1 chip
+  - build the image with `docker build -t phantomjs .`
+  - run `phantomjs` in a container like `docker run --name c1 -it phantomjs examples/rasterize.js https://duckduckgo.com duck.png`
+  - copy out resulting image with `docker cp c1:/build/duck.png .`
 
 ## Use Cases
 
